@@ -37,5 +37,16 @@ public class Main {
         myArrayList.printArr();
         myArrayList.add(10);
         System.out.println("Exists method: " + myArrayList.exists(10));
+        System.out.println("***********************************************************");
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.add(3);
+        myLinkedList.add(1);
+        myLinkedList.add(1);
+        myLinkedList.add(4);
+        myLinkedList.add(2);
+
+        System.out.println("Get element: " + myLinkedList.get(0));
     }
 }
