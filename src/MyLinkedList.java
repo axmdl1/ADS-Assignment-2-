@@ -32,7 +32,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void set(int index, T item) {
-
+        checkIndex(index);
     }
 
     @Override
@@ -95,7 +95,17 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void removeFirst() {
-
+        if (head != null){
+            if (head.next != null){
+                head = head.next;
+                head.prev = null;
+            }
+            else{
+                head = null;
+                tail = null;
+            }
+            size--;
+        }
     }
 
     @Override
