@@ -1,9 +1,14 @@
 import java.util.Iterator;
 
 public class MyLinkedList<T> implements MyList<T> {
-    private Node<T> head = null;
-    private Node<T> tail = null;
+    private Node<T> head;
+    private Node<T> tail;
     private int size = 0;
+
+    public MyLinkedList(){
+        head = null;
+        tail = null;
+    }
 
     @Override
     public void add(T item) {
@@ -21,7 +26,7 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     private void checkIndex(int index){
-        if (index < 0 || size >= index)
+        if (index < 0 || size <= index)
             throw new IndexOutOfBoundsException("index not correct");
     }
 
@@ -48,10 +53,9 @@ public class MyLinkedList<T> implements MyList<T> {
     @Override
     public T get(int index) {
         checkIndex(index);
-        Node<T> curr = null;
+        Node<T> curr = head;
         if (index < size / 2){
-            curr = head;
-            for (int i = 0; i < index; i++) {
+            for (int i = 0; i < index && curr!=null; i++) {
                 curr = curr.next;
             }
         }
