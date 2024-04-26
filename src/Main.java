@@ -60,5 +60,36 @@ public class Main {
         myLinkedList.sort();
         System.out.print("\nList after sorting: ");
         myLinkedList.printLl();
+        myLinkedList.set(0, 0);
+        System.out.print("\nList after setting: ");
+        myLinkedList.printLl();
+        myLinkedList.addFirst(2);
+        System.out.print("\nList after adding 1st element: ");
+        myLinkedList.printLl();
+        System.out.println("\nGet 1st element from list: " + myLinkedList.getFirst());
+        myLinkedList.remove(0);
+        System.out.print("List after removing element: ");
+        myLinkedList.printLl();
+        System.out.println("\nIndex of 4: " + myLinkedList.indexOf(4));
+        System.out.println("Exists: " + myLinkedList.exists(2));
+        myLinkedList.clear();
+        System.out.println("Clear: ");
+        myLinkedList.printLl();
+        System.out.println("***********************************************************");
+
+        MyQueue<Integer> mq = new MyQueue<>();
+
+        mq.enqueue(2);
+        mq.enqueue(1);
+        mq.enqueue(4);
+        mq.enqueue(5);
+        mq.enqueue(10);
+        mq.dequeue();
+        System.out.println(mq.isEmpty());
+        System.out.println(mq.peek());
+        System.out.print("Queue: ");
+        mq.display();
+        System.out.println("\nSize: " + mq.size());
+
     }
 }
