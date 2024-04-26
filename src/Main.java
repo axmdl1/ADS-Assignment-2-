@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args){
-        MyArrayList myArrayList = new MyArrayList();
+        MyArrayList<Integer> myArrayList = new MyArrayList<>();
 
         myArrayList.add(1);
         myArrayList.add(2);
@@ -30,11 +30,16 @@ public class Main {
         myArrayList.removeLast();
         System.out.print("\nArray after removed last element: ");
         myArrayList.printArr();
+        myArrayList.add(0);
+        myArrayList.sort();
+        System.out.print("\nArray after sorting: ");
+        myArrayList.printArr();
         System.out.println("\nElement index: " + myArrayList.indexOf(10));
         System.out.println("Last elements' index: " + myArrayList.lastIndexOf(1));
         myArrayList.clear();
         System.out.println("Array after clear: ");
         myArrayList.printArr();
+
         myArrayList.add(10);
         System.out.println("Exists method: " + myArrayList.exists(10));
         System.out.println("***********************************************************");
@@ -46,7 +51,11 @@ public class Main {
         myLinkedList.add(1);
         myLinkedList.add(4);
         myLinkedList.add(2);
-        System.out.println(myLinkedList.size());
+        myLinkedList.add(3, 10);
+        System.out.println("Size: " + myLinkedList.size());
         System.out.println("Get element: " + myLinkedList.get(0));
+        myLinkedList.removeFirst();
+        System.out.print("List after deleting first element: ");
+        myLinkedList.printLl();
     }
 }
