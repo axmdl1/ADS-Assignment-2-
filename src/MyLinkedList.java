@@ -177,8 +177,17 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void sort() {
-        Object[] arr = toArray();
-
+        for (int i = 0; i < size - 1; i++) {
+            Node<T> currNode = head;
+            for (int j = 0; j < size - i - 1; j++) {
+                if (currNode.next != null && ((Comparable<T>) currNode.data).compareTo((T) currNode.next.data) > 0){
+                    T tmp = currNode.data;
+                    currNode.data = (T) currNode.next.data;
+                    currNode.next.data = tmp;
+                }
+                currNode = currNode.next;
+            }
+        }
     }
 
     @Override
@@ -207,7 +216,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public boolean exists(Object object) {
-        return false;
+        return indexOf(object) != -1;
     }
 
     @Override

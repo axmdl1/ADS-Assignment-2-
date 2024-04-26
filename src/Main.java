@@ -57,5 +57,8 @@ public class Main {
         myLinkedList.removeFirst();
         System.out.print("List after deleting first element: ");
         myLinkedList.printLl();
+        myLinkedList.sort();
+        System.out.print("\nList after sorting: ");
+        myLinkedList.printLl();
     }
 }
