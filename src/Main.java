@@ -42,7 +42,7 @@ public class Main {
 
         myArrayList.add(10);
         System.out.println("Exists method: " + myArrayList.exists(10));
-        System.out.println("***********************************************************");
+        System.out.println("*********************************************************** \n LinkedList:");
 
         MyLinkedList <Integer>myLinkedList = new MyLinkedList<>();
 
@@ -75,21 +75,46 @@ public class Main {
         myLinkedList.clear();
         System.out.println("Clear: ");
         myLinkedList.printLl();
-        System.out.println("***********************************************************");
+        System.out.println("*********************************************************** \n Queue:");
 
-        MyQueue<Integer> mq = new MyQueue<>();
+        MyQueue<Integer> myQueue = new MyQueue<>();
 
-        mq.enqueue(2);
-        mq.enqueue(1);
-        mq.enqueue(4);
-        mq.enqueue(5);
-        mq.enqueue(10);
-        mq.dequeue();
-        System.out.println(mq.isEmpty());
-        System.out.println(mq.peek());
+        myQueue.enqueue(2);
+        myQueue.enqueue(1);
+        myQueue.enqueue(4);
+        myQueue.enqueue(5);
+        myQueue.enqueue(10);
+        myQueue.dequeue();
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue.peek());
         System.out.print("Queue: ");
-        mq.display();
-        System.out.println("\nSize: " + mq.size());
+        myQueue.display();
+        System.out.println("\nSize: " + myQueue.size());
+        System.out.println("********************************************************* \n Stack:");
 
+        MyStack<Integer> myStack = new MyStack<>();
+
+        myStack.push(1);
+        myStack.push(2);
+        myStack.push(3);
+        myStack.push(4);
+        myStack.pop();
+        System.out.println("1st element: " + myStack.peek());
+        System.out.print("Display stack: ");
+        myStack.display();
+        System.out.println("\nSearch 3rd element: " + myStack.search(1));
+        System.out.println("Size: " + myStack.size());
+        System.out.println("********************************************************** \n MinHeap:");
+
+        MyMinHeap<Integer> myMinHeap = new MyMinHeap<>();
+
+        myMinHeap.add(10);
+        myMinHeap.add(3);
+        myMinHeap.add(8);
+        myMinHeap.add(5);
+
+        myMinHeap.removeMin();
+        System.out.print("MinHeap: ");
+        myMinHeap.display();
     }
 }
