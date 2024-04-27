@@ -1,6 +1,10 @@
+package Types;
+
+import Lists.MyLinkedList;
+
 import java.util.NoSuchElementException;
 
-public class MyQueue<T> extends MyLinkedList<T>{
+public class MyQueue<T> extends MyLinkedList<T> {
     private int size;
     public MyQueue(){
         super();

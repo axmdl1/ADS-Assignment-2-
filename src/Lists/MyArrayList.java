@@ -1,6 +1,8 @@
+package Lists;
+
 import java.util.Iterator;
 
-public class MyArrayList<T> implements MyList<T>{
+public class MyArrayList<T> implements MyList<T> {
     private T[] arr = (T[]) new Object[5];
     private int size = 0;
 
@@ -10,6 +12,7 @@ public class MyArrayList<T> implements MyList<T>{
             increaseBuffer();
         arr[size++] = item;
     }
+
     @Override
     public void add(int index, T item) {
         checkIndex(index);

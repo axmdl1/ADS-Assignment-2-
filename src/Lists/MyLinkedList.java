@@ -1,3 +1,5 @@
+package Lists;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -5,6 +7,18 @@ public class MyLinkedList<T> implements MyList<T> {
     private Node<T> head;
     private Node<T> tail;
     private int size = 0;
+
+    public static class Node<T> {
+        T data;
+        Node<T> next;
+        Node<T> prev;
+
+        public Node(T data){
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
 
     public MyLinkedList(){
         head = null;
@@ -46,7 +60,6 @@ public class MyLinkedList<T> implements MyList<T> {
             currNode.next = newNode;
         }
         size++;
-
     }
 
     private void checkIndex(int index){

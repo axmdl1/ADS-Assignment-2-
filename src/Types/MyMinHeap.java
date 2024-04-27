@@ -1,7 +1,12 @@
+package Types;
+
+import Lists.MyArrayList;
+
 import java.util.NoSuchElementException;
 
-public class MyMinHeap<T extends Comparable<T>> extends MyArrayList<T>  {
+public class MyMinHeap<T extends Comparable<T>> extends MyArrayList<T> {
     private int size;
+
     public MyMinHeap(){
         super();
     }

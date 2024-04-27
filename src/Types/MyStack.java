@@ -1,3 +1,7 @@
+package Types;
+
+import Lists.MyLinkedList;
+
 import java.util.NoSuchElementException;
 
 public class MyStack<T> extends MyLinkedList<T> {

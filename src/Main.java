@@ -1,7 +1,14 @@
+import Lists.MyArrayList;
+import Lists.MyLinkedList;
+import Types.MyMinHeap;
+import Types.MyQueue;
+import Types.MyStack;
+
 public class Main {
     public static void main(String[] args){
         MyArrayList<Integer> myArrayList = new MyArrayList<>();
 
+        System.out.println("************************************************************ \n ArrayList: ");
         myArrayList.add(1);
         myArrayList.add(2);
         myArrayList.add(3);
@@ -44,7 +51,7 @@ public class Main {
         System.out.println("Exists method: " + myArrayList.exists(10));
         System.out.println("*********************************************************** \n LinkedList:");
 
-        MyLinkedList <Integer>myLinkedList = new MyLinkedList<>();
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 
         myLinkedList.add(3);
         myLinkedList.add(1);
@@ -113,6 +120,7 @@ public class Main {
         myMinHeap.add(8);
         myMinHeap.add(5);
 
+        System.out.println("1st element: " + myMinHeap.peek());
         myMinHeap.removeMin();
         System.out.print("MinHeap: ");
         myMinHeap.display();
