@@ -25,6 +25,10 @@ public class MyLinkedList<T> implements MyList<T> {
         tail = null;
     }
 
+    /**
+     * Adds the specified item to the end of this list.
+     * @param item the element to be added to the list
+     */
     @Override
     public void add(T item) {
         Node<T> newNode = new Node<>(item);
@@ -40,6 +44,11 @@ public class MyLinkedList<T> implements MyList<T> {
         size++;
     }
 
+    /**
+     * Adds an element to the specified index.
+     * @param index the index at which to add the element.
+     * @param item the element to add.
+     */
     @Override
     public void add(int index, T item) {
         checkIndex(index);
@@ -62,11 +71,20 @@ public class MyLinkedList<T> implements MyList<T> {
         size++;
     }
 
+    /**
+     * Checks if the index is valid
+     * @param index index to check
+     */
     private void checkIndex(int index){
         if (index < 0 || size <= index)
             throw new IndexOutOfBoundsException("index not correct");
     }
 
+    /**
+     * Sets the element at the specified index
+     * @param index the index of the element to set
+     * @param item the new value of the element
+     */
     @Override
     public void set(int index, T item) {
         checkIndex(index);
@@ -77,6 +95,10 @@ public class MyLinkedList<T> implements MyList<T> {
         currNode.data = item;
     }
 
+    /**
+     * Adds an element to the beginning of the list
+     * @param item the element to add
+     */
     @Override
     public void addFirst(T item) {
         Node<T> newNode = new Node<>(item);
@@ -92,6 +114,10 @@ public class MyLinkedList<T> implements MyList<T> {
         size++;
     }
 
+    /**
+     * Adds an element to the end of the list.
+     * @param item the element to add.
+     */
     @Override
     public void addLast(T item) {
         Node<T> newNode = new Node<>(item);
@@ -107,15 +133,23 @@ public class MyLinkedList<T> implements MyList<T> {
         size++; 
     }
 
+    /**
+     * Prints the elements of the list
+     */
     public void printLl(){
         Node<T> currNode = head;
         while (currNode != null){
             System.out.print(currNode.data + " ");
             currNode = currNode.next;
         }
-
+        System.out.println();
     }
 
+    /**
+     * Retrieves the element at the specified index.
+     * @param index the index of the element to retrieve
+     * @return the element at the specified index
+     */
     @Override
     public T get(int index) {
         checkIndex(index);
@@ -128,11 +162,19 @@ public class MyLinkedList<T> implements MyList<T> {
         return curr.data;
     }
 
+    /**
+     * Retrieves the first element of the list
+     * @return the first element of the list
+     */
     @Override
     public T getFirst() {
         return head.data;
     }
 
+    /**
+     *  Retrieves the last element of the list
+     * @return the last element of the list
+     */
     @Override
     public T getLast() {
         if (tail == null)
@@ -140,6 +182,10 @@ public class MyLinkedList<T> implements MyList<T> {
         return tail.data;
     }
 
+    /**
+     * Remove the element at the specified index
+     * @param index index of the element to remove
+     */
     @Override
     public void remove(int index) {
         checkIndex(index);
@@ -158,6 +204,9 @@ public class MyLinkedList<T> implements MyList<T> {
         size--;
     }
 
+    /**
+     * Removes the first element of the list
+     */
     @Override
     public void removeFirst() {
         if (head != null){
@@ -173,6 +222,9 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    /**
+     * Removes the last element of the list
+     */
     @Override
     public void removeLast() {
         if (tail != null){
@@ -188,8 +240,21 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    /**
+     * Sorts the list
+     */
     @Override
     public void sort() {
+        if (size > 0)
+            bubbleSort();
+        else
+            System.out.println("List is empty!");
+    }
+
+    /**
+     * Sorts the list using bubble sort method in ascending order.
+     */
+    private void bubbleSort(){
         for (int i = 0; i < size - 1; i++) {
             Node<T> currNode = head;
             for (int j = 0; j < size - i - 1; j++) {
@@ -203,6 +268,11 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    /**
+     * Finds the index of the object in array
+     * @param object the element to search for
+     * @return the index of the element, or -1 if not found
+     */
     @Override
     public int indexOf(Object object) {
         int index = 0;
@@ -215,6 +285,12 @@ public class MyLinkedList<T> implements MyList<T> {
         return -1;
     }
 
+    /**
+     * Returns the index of the last occurrence of the specified element in the list,
+     * or -1 if this list does not contain the element.
+     * @param object the element to search for
+     * @return the index of the last occurrence of the element, or -1 if not found
+     */
     @Override
     public int lastIndexOf(Object object) {
         int index = size - 1;
@@ -227,11 +303,20 @@ public class MyLinkedList<T> implements MyList<T> {
         return -1;
     }
 
+    /**
+     * Checks if the specified element exists in the list.
+     * @param object the element to search for
+     * @return true if exists, false if not exists
+     */
     @Override
     public boolean exists(Object object) {
         return indexOf(object) != -1;
     }
 
+    /**
+     * Returns an array containing all elements in this list in proper sequence.
+     * @return an array containing all elements in this list
+     */
     @Override
     public Object[] toArray() {
         Object[] arr = new Object[size];
@@ -242,6 +327,9 @@ public class MyLinkedList<T> implements MyList<T> {
         return arr;
     }
 
+    /**
+     * Removes all elements from the list
+     */
     @Override
     public void clear() {
         head = null;
@@ -249,6 +337,10 @@ public class MyLinkedList<T> implements MyList<T> {
         size = 0;
     }
 
+    /**
+     * This method showing arrays' size.
+     * @return size of array
+     */
     @Override
     public int size() {
         return size;

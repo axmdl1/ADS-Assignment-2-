@@ -87,7 +87,7 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * Retrives the element at the specified index.
+     * Retrieves the element at the specified index.
      * @param index the index of the element to retrieve
      * @return the element at the specified index
      */
